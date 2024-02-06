@@ -26,9 +26,6 @@ jobs:
         cp fonts/* ~/.fonts/
         fc-cache -f -v
 
-    - name: Install HYWenHei font
-      run: fontist install "HYWenHei"
-
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
