@@ -20,10 +20,11 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Install Fontist
-      uses: fontist/setup-fontist@v1
-      with:
-        fontist-token: ${{ secrets.GH_TOKEN }}
+    - name: Install fonts
+      run: |
+        mkdir -p ~/.fonts
+        cp fonts/* ~/.fonts/
+        fc-cache -f -v
 
     - name: Install HYWenHei font
       run: fontist install "HYWenHei"
